@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menú de dulces artesanales - Los mejores postres y golosinas">
+    <title>Menú de Dulces 🍰</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .menu-section {
+            padding: 40px 20px;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffecd2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #667eea;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .item-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .item-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e7e9fc;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .popular {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popular::before {
+            content: "⭐ Popular";
+            position: absolute;
+            top: 10px;
+            right: -35px;
+            background: #ffd700;
+            color: #333;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #ffecd2;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .category-title {
+                font-size: 1.5em;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍰 Menú de Dulces 🍭</h1>
+            <p>Delicias artesanales hechas con amor</p>
+        </header>
+
+        <div class="menu-section">
+            <!-- Pasteles -->
+            <div class="category">
+                <h2 class="category-title">
+                    <span class="emoji">🎂</span> Pasteles
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item popular">
+                        <div class="item-header">
+                            <h3 class="item-name">Pastel de Chocolate</h3>
+                            <span class="item-price">$450</span>
+                        </div>
+                        <p class="item-description">
+                            Delicioso pastel de chocolate con capas de mousse de chocolate oscuro y cobertura de ganache. Porción generosa para compartir.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Rico en chocolate</span>
+                            <span class="tag">1kg</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Cheesecake de Fresa</h3>
+                            <span class="item-price">$380</span>
+                        </div>
+                        <p class="item-description">
+                            Cremoso cheesecake estilo Nueva York con compota de fresas frescas y base de galleta.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Fresco</span>
+                            <span class="tag">Sin gluten disponible</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Pastel Tres Leches</h3>
+                            <span class="item-price">$350</span>
+                        </div>
+                        <p class="item-description">
+                            Esponjoso bizcocho bañado en tres tipos de leche, decorado con crema batida y cerezas.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Tradicional</span>
+                            <span class="tag">Húmedo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postres Individuales -->
+            <div class="category">
+                <h2 class="category-title">
+                    <span class="emoji">🧁</span> Postres Individuales
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item popular">
+                        <div class="item-header">
+                            <h3 class="item-name">Cupcakes Variados</h3>
+                            <span class="item-price">$45/u</span>
+                        </div>
+                        <p class="item-description">
+                            Cupcakes con diferentes sabores: vainilla, chocolate, red velvet y limón. Decorados con buttercream artesanal.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Paquete de 6: $240</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Macarons Franceses</h3>
+                            <span class="item-price">$35/u</span>
+                        </div>
+                        <p class="item-description">
+                            Delicados macarons en sabores de frambuesa, pistacho, chocolate y vainilla.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Caja de 12: $380</span>
+                            <span class="tag">Premium</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Brownie con Helado</h3>
+                            <span class="item-price">$85</span>
+                        </div>
+                        <p class="item-description">
+                            Brownie tibio de chocolate con nueces, servido con helado de vainilla y salsa de chocolate caliente.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Caliente</span>
+                            <span class="tag">Irresistible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golosinas -->
+            <div class="category">
+                <h2 class="category-title">
+                    <span class="emoji">🍬</span> Golosinas y Dulces
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Galletas Artesanales</h3>
+                            <span class="item-price">$120</span>
+                        </div>
+                        <p class="item-description">
+                            Paquete de 10 galletas de mantequilla con chispas de chocolate, avena con pasas o nuez.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Recién horneadas</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item popular">
+                        <div class="item-header">
+                            <h3 class="item-name">Trufas de Chocolate</h3>
+                            <span class="item-price">$180</span>
+                        </div>
+                        <p class="item-description">
+                            Caja de 8 trufas premium con diferentes coberturas: cacao, coco, almendra y pistache.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Hecho a mano</span>
+                            <span class="tag">Regalo perfecto</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Paletas de Caramelo</h3>
+                            <span class="item-price">$25/u</span>
+                        </div>
+                        <p class="item-description">
+                            Paletas artesanales de caramelo en sabores frutales: mango, fresa, tamarindo y sandía.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Sin colorantes artificiales</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="category">
+                <h2 class="category-title">
+                    <span class="emoji">☕</span> Bebidas
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Chocolate Caliente</h3>
+                            <span class="item-price">$55</span>
+                        </div>
+                        <p class="item-description">
+                            Chocolate artesanal preparado con leche y servido con malvaviscos o crema batida.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Reconfortante</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Malteada Premium</h3>
+                            <span class="item-price">$75</span>
+                        </div>
+                        <p class="item-description">
+                            Malteada cremosa en sabores de chocolate, vainilla, fresa o cookies & cream.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Cremosa</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">Café con Postre</h3>
+                            <span class="item-price">$65</span>
+                        </div>
+                        <p class="item-description">
+                            Café expreso, americano o capuchino acompañado de una mini porción de postre a elegir.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Combo perfecto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3>🍰 ¡Endulza tu día con nosotros! 🍭</h3>
+            <div class="contact-info">
+                <p>📞 Teléfono: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>📧 Email: <a href="mailto:info@menuedulces.com">info@menuedulces.com</a></p>
+                <p>📍 Dirección: Calle Dulce #123, Centro</p>
+                <p style="margin-top: 20px; opacity: 0.8;">Horario: Lunes a Sábado 9:00 AM - 8:00 PM | Domingo 10:00 AM - 6:00 PM</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
